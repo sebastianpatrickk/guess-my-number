@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -7,29 +7,41 @@
     <script src="script.js" defer></script>
     <title>Guess my number</title>
   </head>
-  <body class="min-h-screen antialiased">
-    <header>
-      <button class="btn again">Again!</button>
-    </header>
-    <main>
-      <section>
-        <h1>Guess My Number!</h1>
+  <body
+    class="flex min-h-screen flex-col bg-zinc-950 text-sm text-zinc-50 antialiased"
+  >
+    <header class="w-full border-b border-zinc-800">
+      <div class="container mx-auto flex h-16 items-center justify-between">
+        <button
+          class="again rounded border border-zinc-800 px-4 py-2 transition-colors hover:bg-zinc-800"
+        >
+          Again!
+        </button>
         <p class="between">(Between 1 and 20)</p>
-        <div class="number">?</div>
+      </div>
+    </header>
+
+    <main class="flex-1">
+      <section
+        class="container mx-auto flex w-full max-w-6xl flex-col items-center"
+      >
+        <h1 class="text-4xl font-bold">Guess My Number!</h1>
+        <div class="number flex h-24 w-24 items-center justify-center">?</div>
       </section>
       <section class="">
         <input type="number" class="guess" />
         <button class="btn check">Check!</button>
       </section>
+
       <section class="">
         <p class="message">Start guessing...</p>
 
         <div class="">
-            <p class="label-score">💯 Score: <span class="score">20</span></p>
-            <p class="label-highscore">
-              🥇 Highscore: <span class="highscore">0</span>
+          <p class="label-score">💯 Score: <span class="score">20</span></p>
+          <p class="label-highscore">
+            🥇 Highscore: <span class="highscore">0</span>
+          </p>
         </div>
-        </p>
       </section>
     </main>
   </body>

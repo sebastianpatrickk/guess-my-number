@@ -25,9 +25,9 @@ function updateHighscore(newHighscore) {
   document.querySelector(".highscore").textContent = highscore;
 }
 
-function updateBodyStyle(backgroundColor, numberWidth) {
-  document.querySelector("body").style.backgroundColor = backgroundColor;
-  document.querySelector(".number").style.width = numberWidth;
+function updateBodyStyle(backgroundClass, numberClass) {
+  document.querySelector("body").classList.add(backgroundClass);
+  document.querySelector(".number").classList.add(numberClass);
 }
 
 const checkGuess = () => {
@@ -39,7 +39,7 @@ const checkGuess = () => {
     displayMessage("🎉 Correct Number!");
     document.querySelector(".number").textContent = secretNumber;
 
-    updateBodyStyle("#60b347", "30rem");
+    updateBodyStyle("bg-green-900", "text-4xl");
 
     if (score > highscore) {
       updateHighscore(score);
@@ -64,7 +64,7 @@ const resetGame = () => {
   document.querySelector(".number").textContent = "?";
   document.querySelector(".guess").value = "";
 
-  updateBodyStyle("#222", "15rem");
+  updateBodyStyle("bg-zinc-950", "text-3xl");
 };
 
 document.querySelector(".check").addEventListener("click", checkGuess);
