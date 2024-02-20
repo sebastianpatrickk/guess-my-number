@@ -28,16 +28,25 @@
         <h1 class="text-4xl font-bold">Guess My Number!</h1>
         <div class="number flex h-24 w-24 items-center justify-center">?</div>
       </section>
-      <section class="">
-        <input type="number" class="guess" />
-        <button class="btn check">Check!</button>
+      <section class="mx-auto flex max-w-64 flex-col space-y-4">
+        <input
+          type="number"
+          class="guess rounded border border-zinc-800 bg-transparent px-4 py-1.5 text-sm focus-visible:border-zinc-400 focus-visible:outline-none"
+        />
+        <button
+          class="btn check rounded bg-zinc-50 px-4 py-1.5 text-sm font-medium text-zinc-950 hover:bg-zinc-200"
+        >
+          Check!
+        </button>
       </section>
 
       <section class="">
         <p class="message">Start guessing...</p>
 
-        <div class="">
-          <p class="label-score">💯 Score: <span class="score">20</span></p>
+        <div class="flex">
+          <p class="label-score rounded-full bg-zinc-800 px-2 py-1">
+            💯 Score: <span class="score">20</span>
+          </p>
           <p class="label-highscore">
             🥇 Highscore: <span class="highscore">0</span>
           </p>
