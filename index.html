@@ -21,36 +21,49 @@
       </div>
     </header>
 
-    <main class="flex-1">
-      <section
-        class="container mx-auto flex w-full max-w-6xl flex-col items-center"
-      >
-        <h1 class="text-4xl font-bold">Guess My Number!</h1>
-        <div class="number flex h-24 w-24 items-center justify-center">?</div>
-      </section>
-      <section class="mx-auto flex max-w-64 flex-col space-y-4">
-        <input
-          type="number"
-          class="guess rounded border border-zinc-800 bg-transparent px-4 py-1.5 text-sm focus-visible:border-zinc-400 focus-visible:outline-none"
-        />
-        <button
-          class="btn check rounded bg-zinc-50 px-4 py-1.5 text-sm font-medium text-zinc-950 hover:bg-zinc-200"
+    <main class="flex flex-1 justify-center">
+      <section class="pt-32">
+        <section
+          class="container mx-auto flex w-full max-w-6xl flex-col items-center"
         >
-          Check!
-        </button>
-      </section>
+          <h1 class="text-4xl font-bold">Guess My Number!</h1>
+          <div
+            class="number flex h-24 w-24 items-center justify-center text-3xl"
+          >
+            ?
+          </div>
+        </section>
+        <section class="mx-auto flex max-w-64 flex-col space-y-4">
+          <input
+            type="number"
+            placeholder="Enter your guess..."
+            min="0"
+            max="20"
+            class="guess rounded border border-zinc-800 bg-transparent px-4 py-1.5 text-sm focus-visible:border-zinc-400 focus-visible:outline-none"
+          />
+          <button
+            class="btn check rounded bg-zinc-50 px-4 py-1.5 text-sm font-medium text-zinc-950 hover:bg-zinc-200"
+          >
+            Check!
+          </button>
+        </section>
 
-      <section class="">
-        <p class="message">Start guessing...</p>
+        <section
+          class="mx-auto flex max-w-64 flex-col items-center justify-center space-y-4 pt-6"
+        >
+          <p class="message">Start guessing...</p>
 
-        <div class="flex">
-          <p class="label-score rounded-full bg-zinc-800 px-2 py-1">
-            💯 Score: <span class="score">20</span>
-          </p>
-          <p class="label-highscore">
-            🥇 Highscore: <span class="highscore">0</span>
-          </p>
-        </div>
+          <div class="flex items-center justify-center space-x-4">
+            <p class="label-score rounded-full bg-zinc-800 px-2 py-1">
+              💯 Score: <span class="score">20</span>
+            </p>
+            <p
+              class="label-highscore label-score rounded-full bg-zinc-800 px-2 py-1"
+            >
+              🥇 Highscore: <span class="highscore">0</span>
+            </p>
+          </div>
+        </section>
       </section>
     </main>
   </body>
