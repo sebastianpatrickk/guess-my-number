@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/output.css" />
     <script src="script.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
     <title>Guess my number</title>
   </head>
   <body
@@ -42,7 +43,7 @@
             class="guess rounded border border-zinc-800 bg-transparent px-4 py-1.5 text-sm focus-visible:border-zinc-400 focus-visible:outline-none"
           />
           <button
-            class="btn check rounded bg-zinc-50 px-4 py-1.5 text-sm font-medium text-zinc-950 hover:bg-zinc-200"
+            class="check rounded bg-zinc-50 px-4 py-1.5 text-sm font-medium text-zinc-950 hover:bg-zinc-200 disabled:cursor-not-allowed disabled:bg-zinc-300"
           >
             Check!
           </button>
@@ -54,12 +55,10 @@
           <p class="message">Start guessing...</p>
 
           <div class="flex items-center justify-center space-x-4">
-            <p class="label-score rounded-full bg-zinc-800 px-2 py-1">
+            <p class="rounded-full bg-zinc-800 px-2 py-1">
               💯 Score: <span class="score">20</span>
             </p>
-            <p
-              class="label-highscore label-score rounded-full bg-zinc-800 px-2 py-1"
-            >
+            <p class="rounded-full bg-zinc-800 px-2 py-1">
               🥇 Highscore: <span class="highscore">0</span>
             </p>
           </div>

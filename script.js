@@ -3,9 +3,20 @@
 const MAX_NUMBER = 20;
 const INITIAL_SCORE = 20;
 
+const checkEl = document.querySelector(".check");
+const guessEl = document.querySelector(".guess");
+
 let secretNumber = generateRandomNumber(MAX_NUMBER);
 let score = INITIAL_SCORE;
 let highscore = 0;
+
+function shootConfetti() {
+  confetti({
+    particleCount: 100,
+    spread: 70,
+    origin: { y: 0.6 },
+  });
+}
 
 function generateRandomNumber(maxNumber) {
   return Math.trunc(Math.random() * maxNumber) + 1;
@@ -25,21 +36,17 @@ function updateHighscore(newHighscore) {
   document.querySelector(".highscore").textContent = highscore;
 }
 
-function updateBodyStyle(backgroundClass, numberClass) {
-  document.querySelector("body").classList.add(backgroundClass);
-  document.querySelector(".number").classList.add(numberClass);
-}
-
 const checkGuess = () => {
-  const guess = Number(document.querySelector(".guess").value);
+  const guess = Number(guessEl.value);
 
   if (!guess) {
     displayMessage("⛔️ No number!");
   } else if (guess === secretNumber) {
+    checkEl.setAttribute("disabled", "");
+    guessEl.setAttribute("disabled", "");
     displayMessage("🎉 Correct Number!");
     document.querySelector(".number").textContent = secretNumber;
-
-    updateBodyStyle("bg-green-900", "text-4xl");
+    shootConfetti();
 
     if (score > highscore) {
       updateHighscore(score);
@@ -59,13 +66,15 @@ const resetGame = () => {
   score = INITIAL_SCORE;
   secretNumber = generateRandomNumber(MAX_NUMBER);
 
+  console.log(secretNumber);
+
+  checkEl.removeAttribute("disabled");
+  guessEl.removeAttribute("disabled");
   displayMessage("Start guessing...");
   updateScore(score);
   document.querySelector(".number").textContent = "?";
-  document.querySelector(".guess").value = "";
-
-  updateBodyStyle("bg-zinc-950", "text-3xl");
+  guessEl.value = "";
 };
 
-document.querySelector(".check").addEventListener("click", checkGuess);
+checkEl.addEventListener("click", checkGuess);
 document.querySelector(".again").addEventListener("click", resetGame);
