@@ -18,6 +18,11 @@ function shootConfetti() {
   });
 }
 
+function playSoundEffect() {
+  const audio = new Audio("./sound-effect.mp3");
+  audio.play();
+}
+
 function generateRandomNumber(maxNumber) {
   return Math.trunc(Math.random() * maxNumber) + 1;
 }
@@ -47,6 +52,7 @@ const checkGuess = () => {
     displayMessage("🎉 Correct Number!");
     document.querySelector(".number").textContent = secretNumber;
     shootConfetti();
+    playSoundEffect();
 
     if (score > highscore) {
       updateHighscore(score);
