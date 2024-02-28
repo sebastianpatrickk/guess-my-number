@@ -63,7 +63,10 @@ const checkGuess = () => {
       updateScore(score - 1);
     } else {
       displayMessage("💥 You lost the game!");
+      document.querySelector(".number").textContent = secretNumber;
       updateScore(0);
+      checkEl.setAttribute("disabled", "");
+      guessEl.setAttribute("disabled", "");
     }
   }
 };
@@ -71,8 +74,6 @@ const checkGuess = () => {
 const resetGame = () => {
   score = INITIAL_SCORE;
   secretNumber = generateRandomNumber(MAX_NUMBER);
-
-  console.log(secretNumber);
 
   checkEl.removeAttribute("disabled");
   guessEl.removeAttribute("disabled");
