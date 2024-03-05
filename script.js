@@ -41,7 +41,8 @@ function updateHighscore(newHighscore) {
   document.querySelector(".highscore").textContent = highscore;
 }
 
-const checkGuess = () => {
+const checkGuess = (e) => {
+  e.preventDefault();
   const guess = Number(guessEl.value);
 
   if (!guess) {
@@ -67,6 +68,7 @@ const checkGuess = () => {
       updateScore(0);
       checkEl.setAttribute("disabled", "");
       guessEl.setAttribute("disabled", "");
+      window.open("https://www.youtube.com/watch?v=2ZIpFytCSVc", "_blank");
     }
   }
 };
